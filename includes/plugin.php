@@ -198,7 +198,7 @@ final class Plugin {
 
     // widget registration hook
     add_action( 'elementor/widgets/register', [ $this, 'register_widgets' ] );
-    add_action( 'elementor/controls/register', [ $this, 'register_controls' ] );
+    // add_action( 'elementor/controls/register', [ $this, 'register_controls' ] );
 
 	}
 
@@ -232,9 +232,9 @@ final class Plugin {
 	 */
 	public function register_widgets( $widgets_manager ) {
 
-		require_once( __DIR__ . '/includes/widgets/widget-1.php' );
+		require_once( __DIR__ . '/widgets/widget-1.php' );
 
-		$widgets_manager->register( new \Apples_Addon\Widget_1() );
+		$widgets_manager->register( new \Simple_Widget() );
 	}
 
   /**
@@ -247,11 +247,11 @@ final class Plugin {
 	 * @param \Elementor\Controls_Manager $controls_manager Elementor controls manager.
 	 */
 
-  public function register_controls($controls_manager)
-  {
-    require_once(__DIR__. '/includes/controls/control-1.php');
+  // public function register_controls($controls_manager)
+  // {
+  //   require_once(__DIR__. '/includes/controls/control-1.php');
 
-    $controls_manager->register(new \Apples_Addon\Control_1());
-  }
+  //   $controls_manager->register(new \Apples_Addon\Control_1());
+  // }
 
 } 
